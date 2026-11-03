@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Natro Macro Pro – Support &amp; Inquiries</title>
+<meta name="description" content="Get in touch with the Natro Macro Pro team. Report bugs, request features, or ask for setup help.">
+<meta name="keywords" content="Natro Macro contact, Bee Swarm Simulator macro support, BSS macro help">
+<meta name="author" content="Natro Macro Pro">
+<meta name="robots" content="index, follow">
+
+<meta property="og:title" content="Contact Natro Macro Pro">
+<meta property="og:description" content="Report bugs, request features, or ask for setup help.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://natromacro.dev/contact.html">
+<meta property="og:image" content="images/hero.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Contact Natro Macro Pro">
+<meta name="twitter:description" content="Report bugs, request features, or ask for setup help.">
+<meta name="twitter:image" content="images/hero.png">
+
+<link rel="icon" type="image/png" href="images/logo.png">
+<link rel="apple-touch-icon" href="images/logo.png">
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+    --primary-blue: #2563eb;
+    --secondary-purple: #7c3aed;
+    --accent-cyan: #06b6d4;
+    --dark-text: #1e293b;
+    --medium-text: #475569;
+    --light-text: #64748b;
+    --bg-light: #f8fafc;
+    --bg-white: #ffffff;
+    --border-color: #e2e8f0;
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+    line-height: 1.7;
+    color: var(--dark-text);
+    background-color: var(--bg-white);
+    overflow-x: hidden;
+}
+
+header {
+    background-color: var(--bg-white);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1.25rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.95);
+}
+
+nav {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.logo-container { display: flex; align-items: center; gap: 0.75rem; }
+.logo { height: 45px; width: auto; }
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--primary-blue), var(--secondary-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.nav-links { display: flex; list-style: none; gap: 2.5rem; align-items: center; }
+
+.nav-links a {
+    color: var(--medium-text);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background: linear-gradient(90deg, var(--primary-blue), var(--secondary-purple));
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover { color: var(--primary-blue); }
+.nav-links a:hover::after { width: 100%; }
+.nav-links a.active { color: var(--primary-blue); }
+.nav-links a.active::after { width: 100%; }
+
+.menu-toggle { display: none; flex-direction: column; cursor: pointer; gap: 4px; }
+.menu-toggle span { width: 28px; height: 3px; background-color: var(--dark-text); transition: 0.3s; border-radius: 2px; }
+
+.hero {
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    padding: 4rem 2rem;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.1) 0%, transparent 70%);
+    top: -250px;
+    right: -250px;
+    border-radius: 50%;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(124, 58, 237, 0.1) 0%, transparent 70%);
+    bottom: -200px;
+    left: -200px;
+    border-radius: 50%;
+}
+
+.hero-inner { max-width: 760px; margin: 0 auto; position: relative; z-index: 1; }
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--bg-white);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--primary-blue);
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.hero h1 { font-size: 3rem; font-weight: 800; line-height: 1.15; margin-bottom: 1.25rem; }
+
+.hero h1 .highlight {
+    background: linear-gradient(135deg, var(--primary-blue), var(--secondary-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-description { font-size: 1.125rem; color: var(--medium-text); }
+
+.cta-buttons { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+
+.btn {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: inherit;
+}
+
+.btn-primary { background: linear-gradient(135deg, var(--primary-blue), var(--secondary-purple)); color: white; box-shadow: var(--shadow-md); }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+
+.btn-secondary { background: var(--bg-white); color: var(--primary-blue); border: 2px solid var(--primary-blue); }
+.btn-secondary:hover { background: var(--primary-blue); color: white; transform: translateY(-2px); }
+
+.btn-discord { background: #5865f2; color: white; }
+.btn-discord:hover { background: #4752c4; transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+
+.container { max-width: 1280px; margin: 0 auto; padding: 0 2rem; }
+
+section { padding: 5rem 2rem; }
+.section-header { text-align: center; margin-bottom: 4rem; }
+
+.section-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--primary-blue), var(--secondary-purple));
+    color: white;
+    padding: 0.5rem 1.25rem;
+    border-radius: 50px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+section h2 { font-size: 3rem; margin-bottom: 1rem; color: var(--dark-text); font-weight: 800; }
+
+.section-subtitle { font-size: 1.25rem; color: var(--medium-text); max-width: 700px; margin: 0 auto; }
+
+.contact-layout { display: grid; grid-template-columns: 1.4fr 1fr; gap: 3rem; max-width: 1080px; margin: 0 auto; align-items: start; }
+
+.contact-form {
+    background: var(--bg-white);
+    padding: 3rem;
+    border-radius: 16px;
+    box-shadow: var(--shadow-lg);
+    border: 2px solid var(--border-color);
+}
+
+.form-group { margin-bottom: 1.5rem; }
+.form-group label { display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--dark-text); }
+.form-group label .req { color: #dc2626; }
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: all 0.3s ease;
+    color: var(--dark-text);
+    background: var(--bg-white);
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus { outline: none; border-color: var(--primary-blue); box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1); }
+
+.form-group textarea { resize: vertical; min-height: 150px; }
+.form-group .error { color: #dc2626; font-size: 0.875rem; margin-top: 0.25rem; display: none; }
+.form-group.invalid input,
+.form-group.invalid textarea { border-color: #dc2626; }
+.form-group.invalid .error { display: block; }
+
+.form-success {
+    display: none;
+    background: #ecfdf5;
+    border: 2px solid #a7f3d0;
+    color: #065f46;
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    font-size: 0.975rem;
+}
+
+.form-success.show { display: block; }
+
+.info-stack { display: flex; flex-direction: column; gap: 1.25rem; }
+
+.info-card {
+    background: var(--bg-white);
+    border: 2px solid var(--border-color);
+    border-radius: 16px;
+    padding: 1.75rem;
+    transition: all 0.3s ease;
+}
+
+.info-card:hover { border-color: var(--primary-blue); transform: translateY(-3px); box-shadow: var(--shadow-md); }
+.info-card .info-icon { font-size: 1.75rem; margin-bottom: 0.75rem; display: block; }
+.info-card h3 { font-size: 1.125rem; margin-bottom: 0.5rem; font-weight: 700; }
+.info-card p { color: var(--medium-text); font-size: 0.95rem; margin-bottom: 0.875rem; }
+.info-card a { color: var(--primary-blue); font-weight: 600; text-decoration: none; font-size: 0.95rem; }
+.info-card a:hover { text-decoration: underline; }
+
+.faq-container { max-width: 800px; margin: 0 auto; }
+
+.faq-item {
+    background: var(--bg-white);
+    margin-bottom: 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover { border-color: var(--primary-blue); }
+
+.faq-question {
+    width: 100%;
+    padding: 1.5rem 2rem;
+    background: var(--bg-white);
+    border: none;
+    text-align: left;
+    font-size: 1.125rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    color: var(--dark-text);
+    font-family: inherit;
+}
+
+.faq-question:hover { color: var(--primary-blue); }
+
+.faq-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--bg-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    color: var(--primary-blue);
+    flex: 0 0 auto;
+}
+
+.faq-question.active .faq-icon { transform: rotate(45deg); background: var(--primary-blue); color: white; }
+
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease; padding: 0 2rem; }
+.faq-answer.active { max-height: 500px; padding: 0 2rem 1.5rem; }
+.faq-answer p { color: var(--medium-text); line-height: 1.8; }
+
+footer { background: linear-gradient(135deg, var(--dark-text) 0%, #0f172a 100%); color: white; padding: 4rem 2rem 2rem; }
+
+.footer-content { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+.footer-section h3 { color: white; margin-bottom: 1.5rem; font-size: 1.125rem; font-weight: 700; }
+.footer-section p { color: #94a3b8; line-height: 1.7; margin-bottom: 1rem; }
+.footer-section ul { list-style: none; }
+.footer-section ul li { margin-bottom: 0.75rem; }
+.footer-section a { color: #cbd5e1; text-decoration: none; transition: color 0.3s ease; }
+.footer-section a:hover { color: var(--primary-blue); }
+
+.social-links { display: flex; gap: 1rem; font-size: 1.5rem; }
+.footer-bottom { text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1); color: #94a3b8; }
+
+.text-center { text-align: center; }
+.bg-light { background-color: var(--bg-light); }
+
+@media (max-width: 1024px) {
+    .contact-layout { grid-template-columns: 1fr; gap: 2rem; }
+    .footer-content { grid-template-columns: 1fr 1fr; gap: 2rem; }
+}
+
+@media (max-width: 768px) {
+    .menu-toggle { display: flex; }
+    .nav-links {
+        position: fixed;
+        left: -100%;
+        top: 75px;
+        flex-direction: column;
+        background-color: var(--bg-white);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: var(--shadow-lg);
+        padding: 2rem 0;
+        border-top: 1px solid var(--border-color);
+    }
+    .nav-links.active { left: 0; }
+    .hero { padding: 3rem 1.5rem; }
+    .hero h1 { font-size: 2.25rem; }
+    section { padding: 3rem 1.5rem; }
+    section h2 { font-size: 2rem; }
+    .contact-form { padding: 2rem 1.5rem; }
+    .footer-content { grid-template-columns: 1fr; text-align: center; }
+    .social-links { justify-content: center; }
+}
+
+@media (max-width: 480px) {
+    .hero h1 { font-size: 1.875rem; }
+    .btn { width: 100%; justify-content: center; }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in-up { animation: fadeInUp 0.6s ease-out; }
+</style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo-container">
+                <img src="images/logo.png" alt="Natro Macro Pro Logo" class="logo">
+                <span class="logo-text">Natro Macro Pro</span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="download.html">Download</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-inner fade-in-up">
+            <div class="hero-badge">
+                <span>✉️</span> We Read Everything
+            </div>
+            <h1>Get in <span class="highlight">Touch</span></h1>
+            <p class="hero-description">
+                Bugs, feature ideas, broken downloads, or just a question about setup — send it over and we'll get back to you.
+            </p>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="contact-layout">
+                <div class="contact-form">
+                    <div class="form-success" id="formSuccess">
+                        ✅ Message sent. We usually reply within 24–48 hours.
+                    </div>
+                    <form id="contactForm" novalidate>
+                        <div class="form-group">
+                            <label for="name">Name <span class="req">*</span></label>
+                            <input type="text" id="name" name="name" placeholder="Your name" autocomplete="name">
+                            <div class="error" id="nameError">Please enter your name.</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email <span class="req">*</span></label>
+                            <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email">
+                            <div class="error" id="emailError">Please enter a valid email address.</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <select id="subject" name="subject">
+                                <option value="support">Setup or troubleshooting help</option>
+                                <option value="bug">Bug report</option>
+                                <option value="feature">Feature request</option>
+                                <option value="download">Download problem</option>
+                                <option value="other">Something else</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message <span class="req">*</span></label>
+                            <textarea id="message" name="message" placeholder="Tell us what's going on. Include your macro version and any error text if it's a bug."></textarea>
+                            <div class="error" id="messageError">Please write a message.</div>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                            <span>📨</span> Send Message
+                        </button>
+                    </form>
+                </div>
+
+                <div class="info-stack">
+                    <div class="info-card">
+                        <span class="info-icon">💬</span>
+                        <h3>Discord</h3>
+                        <p>Fastest route to an answer. Thousands of users and the dev team are active there daily.</p>
+                        <a href="https://discord.gg/natromacro" target="_blank" rel="noopener noreferrer">Join the server →</a>
+                    </div>
+                    <div class="info-card">
+                        <span class="info-icon">📧</span>
+                        <h3>Email</h3>
+                        <p>Prefer email for longer reports or anything private.</p>
+                        <a href="mailto:support@natromacro.dev">support@natromacro.dev</a>
+                    </div>
+                    <div class="info-card">
+                        <span class="info-icon">⏱️</span>
+                        <h3>Response Time</h3>
+                        <p>Typically 24–48 hours. Bug reports with version numbers and logs get triaged first.</p>
+                    </div>
+                    <div class="info-card">
+                        <span class="info-icon">⬇️</span>
+                        <h3>Just Need the File?</h3>
+                        <p>Skip the form — the current release is one click away.</p>
+                        <a href="https://anondrop.net/1567028999744393297/Natro.Macro.Pro.v1.2.1.rar?download=true&amp;token=9492849a-d992-44fb-8831-3e0b5877277c" download="Natro.Macro.Pro.v1.2.1.rar" target="_blank" rel="noopener noreferrer">Download Natro Macro Pro →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-light">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Before You Write</span>
+                <h2>Quick Answers</h2>
+                <p class="section-subtitle">These cover most of what lands in the inbox</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        The download link isn't working — what now?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Try a different browser or disable your download manager, since some of them mangle direct links. If it still fails, grab a mirror from the Discord — pinned in the support channel.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        The macro does nothing after I press start.
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Nine times out of ten it's permissions. Run START.bat as administrator and make sure the Roblox window is focused. Also check your antivirus hasn't silently blocked the script host.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Can I request a feature?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, and please do. Pick "Feature request" in the subject dropdown and describe the workflow you want automated. Detailed requests get considered seriously.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Do you offer private or paid support?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>No paid tier exists. Community and email support are free, and every feature ships unlocked for everyone.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container text-center">
+            <div class="section-header">
+                <h2>Start Automating Today</h2>
+                <p class="section-subtitle">Join thousands of players who have transformed their Bee Swarm Simulator experience</p>
+            </div>
+            <div class="cta-buttons">
+                <a href="https://anondrop.net/1567028999744393297/Natro.Macro.Pro.v1.2.1.rar?download=true&amp;token=9492849a-d992-44fb-8831-3e0b5877277c" download="Natro.Macro.Pro.v1.2.1.rar" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="font-size: 1.125rem; padding: 1.25rem 2.5rem;">
+                    <span>⬇️</span> Download Natro Macro Pro
+                </a>
+                <a href="https://discord.gg/natromacro" target="_blank" rel="noopener noreferrer" class="btn btn-discord" style="font-size: 1.125rem; padding: 1.25rem 2.5rem;">
+                    <span>💬</span> Join Discord
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Natro Macro Pro</h3>
+                <p>The most advanced free automation tool for Bee Swarm Simulator. Open-source, transparent, and trusted by thousands of players worldwide.</p>
+                <p style="margin-top: 1.5rem; font-size: 0.875rem; opacity: 0.7;">Powered by Natro Team</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="https://anondrop.net/1567028999744393297/Natro.Macro.Pro.v1.2.1.rar?download=true&amp;token=9492849a-d992-44fb-8831-3e0b5877277c" download="Natro.Macro.Pro.v1.2.1.rar" target="_blank" rel="noopener noreferrer">Download</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="https://discord.gg/natromacro" target="_blank" rel="noopener noreferrer">Discord</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms &amp; Conditions</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Community</h3>
+                <div class="social-links">
+                    <a href="https://discord.gg/natromacro" target="_blank" rel="noopener noreferrer" title="Discord">💬</a>
+                </div>
+                <p style="margin-top: 1rem;">Join our Discord for support, updates, custom patterns, and community discussions!</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Natro Macro Pro. Open Source under GNU GPL v3.0. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        const form = document.getElementById('contactForm');
+        const success = document.getElementById('formSuccess');
+
+        function setInvalid(id, invalid) {
+            document.getElementById(id).closest('.form-group').classList.toggle('invalid', invalid);
+        }
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const name = document.getElementById('name');
+            const email = document.getElementById('email');
+            const message = document.getElementById('message');
+
+            const nameBad = name.value.trim().length < 2;
+            const emailBad = !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.value.trim());
+            const messageBad = message.value.trim().length < 10;
+
+            setInvalid('name', nameBad);
+            setInvalid('email', emailBad);
+            setInvalid('message', messageBad);
+
+            if (nameBad || emailBad || messageBad) {
+                success.classList.remove('show');
+                document.getElementById(nameBad ? 'name' : emailBad ? 'email' : 'message').focus();
+                return;
+            }
+
+            success.classList.add('show');
+            form.reset();
+            success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+
+        ['name', 'email', 'message'].forEach(id => {
+            document.getElementById(id).addEventListener('input', () => setInvalid(id, false));
+        });
+
+        const faqQuestions = document.querySelectorAll('.faq-question');
+
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const isActive = question.classList.contains('active');
+
+                faqQuestions.forEach(q => {
+                    q.classList.remove('active');
+                    q.nextElementSibling.classList.remove('active');
+                });
+
+                if (!isActive) {
+                    question.classList.add('active');
+                    question.nextElementSibling.classList.add('active');
+                }
+            });
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
